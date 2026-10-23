@@ -1,0 +1,13 @@
+node_modules/
+.next/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+.run*.log
+data/chroma_db/
+data/*.db
+frontend/node_modules/
+frontend/.next/
+frontend/pnpm-lock.yaml
+*.tgz

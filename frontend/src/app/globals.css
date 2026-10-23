@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --nwis-bg: #071018;
+  --nwis-surface: #0E1821;
+  --nwis-surface2: #14232E;
+  --nwis-border: #26333F;
+  --nwis-primary: #4DA3FF;
+  --nwis-success: #32D296;
+  --nwis-warning: #F4B942;
+  --nwis-critical: #FF5964;
+  --nwis-text: #EAF4FA;
+  --nwis-muted: #8EA3B3;
+}
+
+html, body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #071018;
+  color: #EAF4FA;
+}
+
+/* Leaflet dark map fix */
+.leaflet-container {
+  background: #071018 !important;
+}
+.leaflet-tile-pane {
+  filter: brightness(0.9) saturate(0.8);
+}
+
+/* No scrollbar utility */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom scrollbar for panels */
+.nwis-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.nwis-scroll::-webkit-scrollbar-track {
+  background: #0E1821;
+}
+.nwis-scroll::-webkit-scrollbar-thumb {
+  background: #26333F;
+  border-radius: 2px;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(77, 163, 255, 0.25);
+  color: #EAF4FA;
+}
+
+@layer utilities {
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+  .font-tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
