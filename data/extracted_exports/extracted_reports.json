@@ -1,0 +1,184 @@
+[
+  {
+    "document": "wcr_volve_15_9_f11b.pdf",
+    "well_header": {
+      "well_id": "15/9-F-11B",
+      "operator": "Statoil ASA",
+      "field_name": "Volve",
+      "spud_date": "2007-08-24",
+      "completion_date": "2007-10-15",
+      "latitude": 58.4394,
+      "longitude": 1.8875,
+      "total_depth_m": 3200.0
+    },
+    "events": [
+      {
+        "well_id": "15/9-F-11B",
+        "event_type": "mud_loss",
+        "depth_m": 2450.0,
+        "formation": "Hugin Formation",
+        "event_date": "2007-09-12",
+        "description": "Partial mud losses of 15 bbl/hr encountered while drilling through the Hugin Formation.",
+        "symptom": "Pit level dropped steadily over 2 hours",
+        "action_taken": "Pumped LCM pill (50 bbl, 40 ppb LCM blend); losses reduced to seepage rate.",
+        "confidence": "high",
+        "source_page": 3,
+        "source_section": null,
+        "source_snippet": "at 2450m encountered mud loss of 15 bbl/hr, pumped LCM pill"
+      },
+      {
+        "well_id": "15/9-F-11B",
+        "event_type": "stuck_pipe",
+        "depth_m": 2810.0,
+        "formation": "Skagerrak Formation",
+        "event_date": "2007-09-20",
+        "description": "Pipe became stuck while tripping out through a tight hole section.",
+        "symptom": "Overpull of 40 klbs, unable to rotate string",
+        "action_taken": "Worked pipe free with jarring after 6 hours; wiper trip run before continuing.",
+        "confidence": "medium",
+        "source_page": 5,
+        "source_section": null,
+        "source_snippet": "tight hole, overpull 40 klbs, jarred free after 6 hrs"
+      }
+    ],
+    "formation_tops": [
+      {
+        "well_id": "15/9-F-11B",
+        "formation_name": "Hugin Formation",
+        "top_depth_m": 2420.0,
+        "base_depth_m": 2750.0,
+        "lithology_notes": "Sandstone reservoir, fine to medium grained",
+        "source_page": 2,
+        "source_snippet": "entering the target Hugin Formation at 2420 m MD"
+      },
+      {
+        "well_id": "15/9-F-11B",
+        "formation_name": "Skagerrak Formation",
+        "top_depth_m": 2750.0,
+        "base_depth_m": 3200.0,
+        "lithology_notes": "Interbedded sandstone and shale",
+        "source_page": 1,
+        "source_snippet": "Total depth of 3200.0 m MD was reached successfully in the Skagerrak Formation"
+      }
+    ],
+    "casing_program": [
+      {
+        "well_id": "15/9-F-11B",
+        "casing_type": "surface",
+        "depth_set_m": 1200.0,
+        "size_inches": 13.375,
+        "weight_ppf": 68.0,
+        "source_page": 4,
+        "source_snippet": "13-3/8 inch surface casing set at 1200m"
+      },
+      {
+        "well_id": "15/9-F-11B",
+        "casing_type": "intermediate",
+        "depth_set_m": 2600.0,
+        "size_inches": 9.625,
+        "weight_ppf": 47.0,
+        "source_page": 4,
+        "source_snippet": "Casing 9-5/8 inch was set and cemented without issues at 2600 m MD"
+      }
+    ],
+    "cementing_records": [
+      {
+        "well_id": "15/9-F-11B",
+        "casing_stage": "intermediate",
+        "cement_type": "Class G + silica",
+        "volume_bbl": 280.0,
+        "top_of_cement_m": 1800.0,
+        "issues_noted": null,
+        "source_page": 4,
+        "source_snippet": "Casing 9-5/8 inch was set and cemented without issues"
+      }
+    ],
+    "mud_program": [
+      {
+        "well_id": "15/9-F-11B",
+        "depth_interval_start_m": 2400.0,
+        "depth_interval_end_m": 2600.0,
+        "mud_type": "OBM",
+        "mud_weight_sg": 1.45,
+        "losses_observed": "Partial losses 15 bbl/hr at 2450m",
+        "source_page": 3,
+        "source_snippet": "12-1/4 inch hole section through Hugin Formation at 2450.0 m MD"
+      }
+    ]
+  },
+  {
+    "document": "ddr_volve_15_9_f12.pdf",
+    "well_header": {
+      "well_id": "15/9-F-12",
+      "operator": "Statoil ASA",
+      "field_name": "Volve",
+      "spud_date": "2008-01-10",
+      "completion_date": "2008-03-05",
+      "latitude": 58.441,
+      "longitude": 1.889,
+      "total_depth_m": 3350.0
+    },
+    "events": [
+      {
+        "well_id": "15/9-F-12",
+        "event_type": "kick",
+        "depth_m": 2510.0,
+        "formation": "Hugin Formation",
+        "event_date": "2008-01-28",
+        "description": "Gas kick taken while drilling 8-1/2 inch hole section in Hugin Sandstone.",
+        "symptom": "Pit volume gain of 12 bbl observed with flow rate increase.",
+        "action_taken": "Shut in well on annular BOP; circulated out influx using Driller's Method.",
+        "confidence": "high",
+        "source_page": 2,
+        "source_section": null,
+        "source_snippet": "gas kick 12 bbl gain, shut in annular BOP"
+      }
+    ],
+    "formation_tops": [
+      {
+        "well_id": "15/9-F-12",
+        "formation_name": "Hugin Formation",
+        "top_depth_m": 2410.0,
+        "base_depth_m": 2720.0,
+        "lithology_notes": "Sandstone, gas bearing",
+        "source_page": 2,
+        "source_snippet": "drilling 8-1/2 inch hole section in Hugin Sandstone"
+      }
+    ],
+    "casing_program": [
+      {
+        "well_id": "15/9-F-12",
+        "casing_type": "intermediate",
+        "depth_set_m": 2480.0,
+        "size_inches": 9.625,
+        "weight_ppf": 47.0,
+        "source_page": 1,
+        "source_snippet": "9-5/8 inch casing set at 2480m"
+      }
+    ],
+    "cementing_records": [
+      {
+        "well_id": "15/9-F-12",
+        "casing_stage": "intermediate",
+        "cement_type": "Class G",
+        "volume_bbl": 250.0,
+        "top_of_cement_m": 1750.0,
+        "issues_noted": null,
+        "source_page": 1,
+        "source_snippet": "cemented 9-5/8 casing to 1750m TOC"
+      }
+    ],
+    "mud_program": [
+      {
+        "well_id": "15/9-F-12",
+        "depth_interval_start_m": 2480.0,
+        "depth_interval_end_m": 3350.0,
+        "mud_type": "OBM",
+        "mud_weight_sg": 1.5,
+        "losses_observed": null,
+        "source_page": 2,
+        "source_snippet": "drilling 8-1/2 inch hole section in Hugin"
+      }
+    ]
+  }
+]

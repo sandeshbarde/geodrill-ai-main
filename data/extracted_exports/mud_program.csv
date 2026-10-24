@@ -1,0 +1,7 @@
+id,well_id,depth_interval_start_m,depth_interval_end_m,mud_type,mud_weight_sg,losses_observed,source_doc,source_page,source_snippet
+1,15/9-F-11B,2400.0,2600.0,OBM,1.45,Partial losses 15 bbl/hr at 2450m,wcr_volve_15_9_f11b.pdf,3,12-1/4 inch hole section through Hugin Formation at 2450.0 m MD
+2,15/9-F-12,2480.0,3350.0,OBM,1.5,,ddr_volve_15_9_f12.pdf,2,drilling 8-1/2 inch hole section in Hugin
+3,15/9-F-11B,2400.0,2600.0,OBM,1.45,Partial losses 15 bbl/hr at 2450m,wcr_volve_15_9_f11b.pdf,3,12-1/4 inch hole section through Hugin Formation at 2450.0 m MD
+4,15/9-F-12,2480.0,3350.0,OBM,1.5,,ddr_volve_15_9_f12.pdf,2,drilling 8-1/2 inch hole section in Hugin
+5,15/9-F-11B,2400.0,2600.0,OBM,1.45,Partial losses 15 bbl/hr at 2450m,wcr_volve_15_9_f11b.pdf,3,12-1/4 inch hole section through Hugin Formation at 2450.0 m MD
+6,15/9-F-12,2480.0,3350.0,OBM,1.5,,ddr_volve_15_9_f12.pdf,2,drilling 8-1/2 inch hole section in Hugin
