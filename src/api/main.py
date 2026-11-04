@@ -18,7 +18,7 @@ from uuid import uuid4
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from starlette.responses import JSONResponse
+from starlette.responses import JSONResponse, HTMLResponse
 
 from src.api.routes.ocr_routes import router as ocr_router
 from src.api.routes.incident_routes import router as incident_router
@@ -160,6 +160,81 @@ app.include_router(trajectory_router, prefix="/api/v1")
 app.include_router(telemetry_router, prefix="/api/v1")
 app.include_router(predictive_risk_router, prefix="/api/v1")
 app.include_router(alert_router, prefix="/api/v1")
+
+
+@app.get("/", tags=["System"])
+async def root(request: Request):
+    """Root endpoint welcoming users and providing direct links to API docs and health."""
+    accept = request.headers.get("accept", "")
+    if "text/html" in accept:
+        html_content = """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eRTMAC-NWIS | GeoDrill AI API</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background: #071018; color: #EAF4FA; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .card { background: #0E1821; border: 1px solid #26333F; border-radius: 16px; max-width: 640px; width: 100%; padding: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+        .badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 9999px; background: rgba(50, 210, 150, 0.15); border: 1px solid rgba(50, 210, 150, 0.4); color: #32D296; font-size: 11px; font-weight: 600; text-transform: uppercase; margin-bottom: 16px; font-family: monospace; }
+        .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #32D296; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        h1 { font-size: 24px; font-weight: 700; color: #FFFFFF; margin-bottom: 8px; }
+        p { color: #8EA3B3; font-size: 14px; line-height: 1.5; margin-bottom: 24px; }
+        .btn-group { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+        .btn-primary { background: #4DA3FF; color: #FFFFFF; box-shadow: 0 4px 12px rgba(77, 163, 255, 0.3); }
+        .btn-primary:hover { background: #3D8BE6; transform: translateY(-1px); }
+        .btn-secondary { background: #14232E; color: #EAF4FA; border: 1px solid #26333F; }
+        .btn-secondary:hover { background: #1C3040; border-color: #4DA3FF; }
+        .section-title { font-size: 11px; font-family: monospace; text-transform: uppercase; letter-spacing: 0.05em; color: #8EA3B3; margin-bottom: 12px; font-weight: 600; }
+        .endpoints { background: #080F18; border: 1px solid #1A2633; border-radius: 8px; padding: 12px; font-family: monospace; font-size: 12px; }
+        .endpoint-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #14232E; }
+        .endpoint-row:last-child { border-bottom: none; }
+        .method { color: #32D296; font-weight: bold; width: 50px; }
+        .path { color: #4DA3FF; text-decoration: none; }
+        .desc { color: #8EA3B3; text-align: right; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="badge"><span class="badge-dot"></span> Backend API Live</div>
+        <h1>GeoDrill AI • eRTMAC-NWIS</h1>
+        <p>Nearby Wells Intelligence & Real-Time Offset Correlation API is successfully deployed and running on Render.</p>
+        <div class="btn-group">
+            <a href="/docs" class="btn btn-primary">📖 Open Interactive Swagger Docs</a>
+            <a href="/health" class="btn btn-secondary">🩺 System Health Check</a>
+        </div>
+        <div class="section-title">Core API Endpoints</div>
+        <div class="endpoints">
+            <div class="endpoint-row"><span class="method">GET</span><a href="/api/v1/wells/nearby?lat=16.245&lon=82.352&radius_km=10" class="path">/api/v1/wells/nearby</a><span class="desc">Nearby GIS Wells</span></div>
+            <div class="endpoint-row"><span class="method">GET</span><a href="/docs#/Copilot" class="path">/api/v1/copilot/search</a><span class="desc">Grounded AI Copilot</span></div>
+            <div class="endpoint-row"><span class="method">GET</span><a href="/docs#/Incidents" class="path">/api/v1/incidents/correlate-near</a><span class="desc">Offset Hazards</span></div>
+            <div class="endpoint-row"><span class="method">POST</span><a href="/docs#/Telemetry" class="path">/api/v1/telemetry</a><span class="desc">Validated Ingestion</span></div>
+            <div class="endpoint-row"><span class="method">POST</span><a href="/docs#/Risk" class="path">/api/v1/predictive-risk</a><span class="desc">Hazard Prediction</span></div>
+        </div>
+    </div>
+</body>
+</html>"""
+        return HTMLResponse(content=html_content)
+
+    return {
+        "app": "GeoDrill AI • eRTMAC-NWIS",
+        "version": "1.0.0",
+        "status": "online",
+        "documentation": "/docs",
+        "health": "/health",
+        "endpoints": {
+            "nearby_wells": "/api/v1/wells/nearby",
+            "copilot": "/api/v1/copilot/search",
+            "incidents": "/api/v1/incidents/correlate-near",
+            "telemetry": "/api/v1/telemetry",
+            "predictive_risk": "/api/v1/predictive-risk",
+            "alerts": "/api/v1/alerts",
+            "ingest": "/api/v1/ingest-document",
+        },
+    }
 
 
 @app.get("/health", tags=["System"])
