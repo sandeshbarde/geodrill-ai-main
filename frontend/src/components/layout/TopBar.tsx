@@ -3,9 +3,13 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useDrillStore, SCENARIO_PRESETS, ScenarioType } from '@/store/useDrillStore';
 import { apiClient, toTelemetryPoint } from '@/lib/api';
-import { Bell, Search, SlidersHorizontal, Play, Pause, Layers, ChevronDown, Activity } from 'lucide-react';
+import { Bell, Search, SlidersHorizontal, Play, Pause, Layers, ChevronDown, Activity, Menu } from 'lucide-react';
 
-export const TopBar: React.FC = () => {
+interface TopBarProps {
+  onToggleMobileMenu?: () => void;
+}
+
+export const TopBar: React.FC<TopBarProps> = ({ onToggleMobileMenu }) => {
   const {
     activeWellId, field, telemetry, risk, isSimulating, isStreaming10Hz,
     selectedScenario, setScenario, toggleSimulation, toggle10HzStream,
@@ -74,22 +78,33 @@ export const TopBar: React.FC = () => {
   };
 
   return (
-    <header className="bg-[#080F18] border-b border-[#26333F] h-11 flex items-center px-4 gap-0 sticky top-0 z-40 select-none flex-shrink-0">
+    <header className="bg-[#080F18] border-b border-[#26333F] h-11 flex items-center px-3 sm:px-4 gap-0 sticky top-0 z-40 select-none flex-shrink-0">
+      {/* Mobile Hamburger Menu Toggle */}
+      {onToggleMobileMenu && (
+        <button
+          onClick={onToggleMobileMenu}
+          className="lg:hidden p-1.5 -ml-1 mr-2 text-slate-300 hover:text-white rounded-lg hover:bg-[#14232E] transition-colors"
+          title="Open Menu"
+        >
+          <Menu className="w-5 h-5 text-cyan-400" />
+        </button>
+      )}
+
       {/* Logo — mobile only (sidebar hidden on mobile) */}
-      <div className="lg:hidden flex items-center pr-3 border-r border-[#26333F] mr-3">
+      <div className="lg:hidden flex items-center pr-2 sm:pr-3 border-r border-[#26333F] mr-2 sm:mr-3">
         <Image
           src="/logo.jpg"
           alt="eRTMAC-NWIS"
-          width={28}
-          height={28}
+          width={26}
+          height={26}
           className="object-cover object-top rounded"
           priority
         />
       </div>
 
       {/* Active Well */}
-      <div className="relative flex items-center gap-2 pr-4 border-r border-[#26333F]">
-        <span className="text-[10px] text-[#8EA3B3] uppercase tracking-wide">Active Well</span>
+      <div className="relative flex items-center gap-1.5 sm:gap-2 pr-2 sm:pr-4 border-r border-[#26333F]">
+        <span className="hidden sm:inline text-[10px] text-[#8EA3B3] uppercase tracking-wide">Well</span>
         <button
           onClick={() => setShowScenarioMenu((s) => !s)}
           className="flex items-center gap-1 text-[#EAF4FA] font-mono text-xs font-bold hover:text-[#4DA3FF] transition-colors"

@@ -5,7 +5,7 @@
   "description": "GeoDrill AI - eRTMAC-NWIS",
   "scripts": {
     "postinstall": "npm --prefix frontend install",
-    "build": "npm --prefix frontend install && npm --prefix frontend run build",
+    "build": "npm --prefix frontend run build",
     "start": "npm --prefix frontend run start",
     "dev": "npm --prefix frontend run dev",
     "lint": "npm --prefix frontend run lint"

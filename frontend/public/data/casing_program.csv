@@ -1,0 +1,10 @@
+id,well_id,casing_type,depth_set_m,size_inches,weight_ppf,source_doc,source_page,source_snippet
+1,15/9-F-11B,surface,1200.0,13.375,68.0,wcr_volve_15_9_f11b.pdf,4,13-3/8 inch surface casing set at 1200m
+2,15/9-F-11B,intermediate,2600.0,9.625,47.0,wcr_volve_15_9_f11b.pdf,4,Casing 9-5/8 inch was set and cemented without issues at 2600 m MD
+3,15/9-F-12,intermediate,2480.0,9.625,47.0,ddr_volve_15_9_f12.pdf,1,9-5/8 inch casing set at 2480m
+4,15/9-F-11B,surface,1200.0,13.375,68.0,wcr_volve_15_9_f11b.pdf,4,13-3/8 inch surface casing set at 1200m
+5,15/9-F-11B,intermediate,2600.0,9.625,47.0,wcr_volve_15_9_f11b.pdf,4,Casing 9-5/8 inch was set and cemented without issues at 2600 m MD
+6,15/9-F-12,intermediate,2480.0,9.625,47.0,ddr_volve_15_9_f12.pdf,1,9-5/8 inch casing set at 2480m
+7,15/9-F-11B,surface,1200.0,13.375,68.0,wcr_volve_15_9_f11b.pdf,4,13-3/8 inch surface casing set at 1200m
+8,15/9-F-11B,intermediate,2600.0,9.625,47.0,wcr_volve_15_9_f11b.pdf,4,Casing 9-5/8 inch was set and cemented without issues at 2600 m MD
+9,15/9-F-12,intermediate,2480.0,9.625,47.0,ddr_volve_15_9_f12.pdf,1,9-5/8 inch casing set at 2480m

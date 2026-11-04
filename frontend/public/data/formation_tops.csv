@@ -1,0 +1,10 @@
+id,well_id,formation_name,top_depth_m,base_depth_m,lithology_notes,source_doc,source_page,source_snippet
+1,15/9-F-11B,Hugin Formation,2420.0,2750.0,"Sandstone reservoir, fine to medium grained",wcr_volve_15_9_f11b.pdf,2,entering the target Hugin Formation at 2420 m MD
+2,15/9-F-11B,Skagerrak Formation,2750.0,3200.0,Interbedded sandstone and shale,wcr_volve_15_9_f11b.pdf,1,Total depth of 3200.0 m MD was reached successfully in the Skagerrak Formation
+3,15/9-F-12,Hugin Formation,2410.0,2720.0,"Sandstone, gas bearing",ddr_volve_15_9_f12.pdf,2,drilling 8-1/2 inch hole section in Hugin Sandstone
+4,15/9-F-11B,Hugin Formation,2420.0,2750.0,"Sandstone reservoir, fine to medium grained",wcr_volve_15_9_f11b.pdf,2,entering the target Hugin Formation at 2420 m MD
+5,15/9-F-11B,Skagerrak Formation,2750.0,3200.0,Interbedded sandstone and shale,wcr_volve_15_9_f11b.pdf,1,Total depth of 3200.0 m MD was reached successfully in the Skagerrak Formation
+6,15/9-F-12,Hugin Formation,2410.0,2720.0,"Sandstone, gas bearing",ddr_volve_15_9_f12.pdf,2,drilling 8-1/2 inch hole section in Hugin Sandstone
+7,15/9-F-11B,Hugin Formation,2420.0,2750.0,"Sandstone reservoir, fine to medium grained",wcr_volve_15_9_f11b.pdf,2,entering the target Hugin Formation at 2420 m MD
+8,15/9-F-11B,Skagerrak Formation,2750.0,3200.0,Interbedded sandstone and shale,wcr_volve_15_9_f11b.pdf,1,Total depth of 3200.0 m MD was reached successfully in the Skagerrak Formation
+9,15/9-F-12,Hugin Formation,2410.0,2720.0,"Sandstone, gas bearing",ddr_volve_15_9_f12.pdf,2,drilling 8-1/2 inch hole section in Hugin Sandstone

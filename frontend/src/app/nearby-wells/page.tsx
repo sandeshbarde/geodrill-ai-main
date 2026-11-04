@@ -21,40 +21,49 @@ export default function NearbyWellsPage() {
   const filteredWells = KG_BASIN_WELLS.filter(w => w.distanceKm <= nearbyRadius && w.name.toLowerCase().includes(search.toLowerCase()));
 
   return (
-    <div className="p-5 space-y-5 max-w-[1600px] mx-auto pb-20 lg:pb-5 h-full flex flex-col">
-      <div className="flex items-start justify-between shrink-0">
+    <div className="p-3 sm:p-5 space-y-4 sm:space-y-5 max-w-[1600px] mx-auto pb-24 lg:pb-6 h-full flex flex-col">
+      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 shrink-0">
         <div>
-          <h1 className="text-2xl font-bold text-[#EAF4FA] flex items-center gap-2">
+          <h1 className="text-xl sm:text-2xl font-bold text-[#EAF4FA] flex items-center gap-2">
             <Map className="w-6 h-6 text-[#4DA3FF]" /> Nearby Wells Intelligence
           </h1>
-          <p className="text-sm text-[#8EA3B3] mt-1">Offset wells within {nearbyRadius}km of active well {activeWellId}</p>
+          <p className="text-xs sm:text-sm text-[#8EA3B3] mt-0.5">
+            Offset wells within {nearbyRadius}km of active well <span className="font-mono text-cyan-400 font-bold">{activeWellId}</span>
+          </p>
         </div>
       </div>
 
-      <div className="flex items-center gap-4 bg-[#0E1821] p-3 rounded-lg border border-[#26333F] shrink-0">
-        <div className="flex bg-[#14232E] rounded border border-[#26333F]">
-          {[5, 10, 15, 25].map(r => (
-            <button key={r} onClick={() => setNearbyRadius(r)} className={`px-3 py-1 text-xs font-mono border-r border-[#26333F] last:border-0 ${nearbyRadius === r ? 'bg-[#4DA3FF]/20 text-[#4DA3FF]' : 'text-[#8EA3B3] hover:text-[#EAF4FA]'}`}>
-              {r}km
-            </button>
-          ))}
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 bg-[#0E1821] p-3 rounded-xl border border-[#26333F] shrink-0">
+        <div className="flex items-center justify-between sm:justify-start gap-2">
+          <span className="text-xs font-mono text-slate-400 uppercase sm:hidden">Radius:</span>
+          <div className="flex bg-[#14232E] rounded-lg border border-[#26333F]">
+            {[5, 10, 15, 25].map(r => (
+              <button key={r} onClick={() => setNearbyRadius(r)} className={`px-3 py-1 text-xs font-mono border-r border-[#26333F] last:border-0 transition-colors ${nearbyRadius === r ? 'bg-[#4DA3FF]/20 text-[#4DA3FF] font-bold' : 'text-[#8EA3B3] hover:text-[#EAF4FA]'}`}>
+                {r}km
+              </button>
+            ))}
+          </div>
         </div>
         <div className="flex-1" />
         <div className="relative">
-          <Search className="absolute left-2.5 top-2 w-4 h-4 text-[#8EA3B3]" />
+          <Search className="absolute left-2.5 top-2.5 w-4 h-4 text-[#8EA3B3]" />
           <input 
-            type="text" placeholder="Search wells..." 
+            type="text" placeholder="Search offset wells..." 
             value={search} onChange={e => setSearch(e.target.value)}
-            className="bg-[#14232E] border border-[#26333F] rounded pl-9 pr-3 py-1.5 text-sm text-[#EAF4FA] focus:outline-none focus:border-[#4DA3FF]"
+            className="w-full sm:w-64 bg-[#14232E] border border-[#26333F] rounded-lg pl-9 pr-3 py-1.5 text-xs sm:text-sm text-[#EAF4FA] focus:outline-none focus:border-[#4DA3FF]"
           />
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 flex-1 min-h-[500px]">
-        <div className="lg:col-span-2 rounded-xl overflow-hidden border border-[#26333F] relative">
-          <DynamicWellMap />
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 flex-1 min-h-[380px] lg:min-h-[500px]">
+        <div className="lg:col-span-2 rounded-xl overflow-hidden border border-[#26333F] relative min-h-[340px]">
+          <DynamicWellMap
+            selectedWell={selectedWell as any}
+            wells={filteredWells as any}
+            onSelectWell={(w) => setSelectedWell(w as any)}
+          />
         </div>
-        <div className="lg:col-span-1 rounded-xl overflow-hidden border border-[#26333F] bg-[#0E1821]">
+        <div className="lg:col-span-1 rounded-xl overflow-hidden border border-[#26333F] bg-[#0E1821] flex flex-col">
           {selectedWell ? (
             <WellDetailDrawer well={selectedWell} onClose={() => setSelectedWell(null)} />
           ) : (

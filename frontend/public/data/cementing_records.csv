@@ -1,0 +1,7 @@
+id,well_id,casing_stage,cement_type,volume_bbl,top_of_cement_m,issues_noted,source_doc,source_page,source_snippet
+1,15/9-F-11B,intermediate,Class G + silica,280.0,1800.0,,wcr_volve_15_9_f11b.pdf,4,Casing 9-5/8 inch was set and cemented without issues
+2,15/9-F-12,intermediate,Class G,250.0,1750.0,,ddr_volve_15_9_f12.pdf,1,cemented 9-5/8 casing to 1750m TOC
+3,15/9-F-11B,intermediate,Class G + silica,280.0,1800.0,,wcr_volve_15_9_f11b.pdf,4,Casing 9-5/8 inch was set and cemented without issues
+4,15/9-F-12,intermediate,Class G,250.0,1750.0,,ddr_volve_15_9_f12.pdf,1,cemented 9-5/8 casing to 1750m TOC
+5,15/9-F-11B,intermediate,Class G + silica,280.0,1800.0,,wcr_volve_15_9_f11b.pdf,4,Casing 9-5/8 inch was set and cemented without issues
+6,15/9-F-12,intermediate,Class G,250.0,1750.0,,ddr_volve_15_9_f12.pdf,1,cemented 9-5/8 casing to 1750m TOC
