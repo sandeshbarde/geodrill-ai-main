@@ -1,17 +1,19 @@
 services:
+  # ── Backend: FastAPI / Python ─────────────────────────────────────────────
   - type: web
     name: geodrill-api
     runtime: python
+    rootDir: .
     buildCommand: pip install --upgrade pip && pip install -r requirements.txt
     startCommand: uvicorn src.api.main:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /health
     envVars:
       - key: PYTHON_VERSION
-        value: 3.12.10
+        value: "3.12.10"
       - key: GEODRILL_CORS_ORIGINS
         sync: false
       - key: GEODRILL_CORS_ORIGIN_REGEX
-        value: ^https://[a-zA-Z0-9-]+\.vercel\.app$
+        value: ^https://[a-zA-Z0-9-]+\.(onrender\.com|vercel\.app)$
       - key: GEMINI_API_KEY
         sync: false
       - key: GEMINI_MODEL
@@ -20,3 +22,21 @@ services:
         sync: false
       - key: GROQ_MODEL
         sync: false
+
+  # ── Frontend: Next.js / Node ──────────────────────────────────────────────
+  - type: web
+    name: geodrill-frontend
+    runtime: node
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    startCommand: node .next/standalone/server.js
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: PORT
+        value: "3000"
+      - key: HOSTNAME
+        value: "0.0.0.0"
+      - key: NEXT_PUBLIC_API_URL
+        # Set this to your backend Render URL after first deploy
+        value: https://geodrill-ai-main-2.onrender.com
